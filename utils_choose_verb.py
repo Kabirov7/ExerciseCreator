@@ -204,7 +204,7 @@ def test_choose_form(nlp, text, df_word_frequency, vocab_num):
         doc = nlp(sentence)
 
         splitted_sentence = [token for token in doc if not token.is_punct]
-        verbs_token = token_verbs(splitted_sentence, doc)
+        verbs_token = token_verbs(nlp, splitted_sentence, doc)
         if not verbs_token:
             continue
         else:
